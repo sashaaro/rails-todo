@@ -1,5 +1,7 @@
 <h1>Задачи</h1>
 
+<button id="show_form">+</button>
+
 </br>
 <% @projects.each do |project| %>
 	<h3><%= project.title.upcase %></h3>
@@ -11,11 +13,13 @@
 	</ul>
 <% end %>
 
-<h2>Новая задача</h2>
-
 <%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <h2>Новая задача</h2>
   <%= f.text_field :text %>
   <%#= f.collection_select :project, Project.all, :id, :title %>
   <%= f.select :project_id, Project.all.collect {|c| [ c.title, c.id ] } %>
-  <%= f.submit "Создать" %>
+  <div>
+	  <a href="#" onClick="javascript: event.preventDefault(); this.closest('form').style.display = 'none'; return void(0)">ОТМЕНА</a>
+	  <a href="#" onClick="javascript: event.preventDefault(); this.closest('form').submit(); return void(0)">OK</a>
+  </div>
 <% end %>

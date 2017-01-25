@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+	$('#show_form').on('click', function() {
+		e.preventDefault();
+		
+	})
+});
