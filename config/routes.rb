@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'todos/change_status'
+
   root to: 'projects#index' 
 
   post 'projects/create'

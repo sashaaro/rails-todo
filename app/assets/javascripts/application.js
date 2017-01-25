@@ -29,10 +29,14 @@ $(document).ready(function() {
 	})
 
 	$('input[type=checkbox]').on('change', function() {
-		var isCompleted = this.checked;
+		var todo = {
+			id: $(this).data('id'),
+			isCompleted: this.checked
+		}
+
 		$.ajax('/todos/change_status', {
 			method: 'POST',
-			data { isCompleted: isCompleted },
+			data: todo
 		})
 	})
 });
