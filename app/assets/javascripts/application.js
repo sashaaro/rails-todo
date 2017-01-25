@@ -19,7 +19,10 @@ $(document).ready(function() {
 	var $form = $('form');
 	var $showFormButton = $('#show_form');
 
-	$form.hide();
+	var isSubmited = $form.data('submited');
+	if (!isSubmited) {
+		$form.hide();
+	}
 	
 
 	$showFormButton.on('click', function(e) {

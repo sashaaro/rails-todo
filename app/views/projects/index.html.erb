@@ -16,9 +16,10 @@
 
 <a href="#" id="show_form">+</a>
 
-<%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form", "data-submited": (request.post? ? 1 : 0) } do |f| %>
   <h2>Новая задача</h2>
   <%= f.text_field :text %>
+  <%= @todo.errors.messages[:text].first if @todo.errors.messages[:text] %>
   <%#= f.collection_select :project, Project.all, :id, :title %>
   <%= f.select :project_id, Project.all.collect {|c| [ c.title, c.id ] } %>
   <div>

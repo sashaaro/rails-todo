@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'projects#index' 
 
   post 'projects/create'
+  
 
   get 'projects/update'
 
