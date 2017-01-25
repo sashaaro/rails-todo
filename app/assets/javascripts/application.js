@@ -16,8 +16,23 @@
 
 
 $(document).ready(function() {
-	$('#show_form').on('click', function() {
+	var $form = $('form');
+	var $showFormButton = $('#show_form');
+
+	$form.hide();
+	
+
+	$showFormButton.on('click', function(e) {
 		e.preventDefault();
-		
+		$form.show();
+		// TODO $showFormButton.hide();
+	})
+
+	$('input[type=checkbox]').on('change', function() {
+		var isCompleted = this.checked;
+		$.ajax('/todos/change_status', {
+			method: 'POST',
+			data { isCompleted: isCompleted },
+		})
 	})
 });

@@ -1,17 +1,20 @@
 <h1>Задачи</h1>
 
-<button id="show_form">+</button>
-
 </br>
 <% @projects.each do |project| %>
 	<h3><%= project.title.upcase %></h3>
 
 	<ul>
 	<% project.todos.each do |todo| %>
-		<li><p><%= todo.text %></p></li>
+		<li>
+			<input data-id=<%= todo.id %> type="checkbox" <%= todo.isCompleted ? 'checked' : '' %>/>
+			<%= todo.text %>
+		</li>
 	<% end %>
 	</ul>
 <% end %>
+
+<a href="#" id="show_form">+</a>
 
 <%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
   <h2>Новая задача</h2>
