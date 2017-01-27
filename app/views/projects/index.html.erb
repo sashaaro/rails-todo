@@ -9,7 +9,7 @@
 	      <div class="well-project-todo">
 	      	<ul>
 	      	<% project.todos.each do |todo| %>
-				<li>
+				<li c>
 					<input data-id=<%= todo.id %> type="checkbox" <%= todo.isCompleted ? 'checked' : '' %>/>
 					<span><%= todo.text %></span>
 				</li>

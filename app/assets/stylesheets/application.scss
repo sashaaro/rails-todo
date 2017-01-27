@@ -15,10 +15,48 @@
  */
 
 @font-face {
+  font-family: 'OpenSans-Light';
+  src: url('OpenSans-Light.ttf');
+  
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('OpenSans-Regular.ttf');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Semibold';
+  src: url('OpenSans-Semibold.ttf');
+
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
 	background-color: #f5f5f5 !important;
+}
+
+* {
+	font-family: OpenSans-Light;
+}
+
+.well.well-project {
+	min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+
+    -webkit-box-shadow: 2px 5px 24px -2px rgba(0,0,0,0.24);
+	-moz-box-shadow: 2px 5px 24px -2px rgba(0,0,0,0.24);
+	box-shadow: 2px 5px 24px -2px rgba(0,0,0,0.24);
 }
 
 .well.well-project {
@@ -35,9 +73,9 @@ body {
 	text-transform: uppercase;
 }
 
-/*.icheckbox-todo.checked {
-	background-color: #3aafda !important;
-}*/
+.well-project-todo li .icheckbox_square-blue.checked + span {
+	text-decoration: line-through;
+}
 
 .navbar.navbar-todo {
 	background-color: #3aafda !important;
@@ -106,7 +144,7 @@ form.nifty_form select {
 
 .select2-selection, .select2-selection__rendered, .select2-selection__arrow {
 
-   height: 30px !important;
+   height: 40px !important;
 
    span {
 

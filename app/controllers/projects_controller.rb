@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-  	@projects = Project.all
+  	@projects = Project.includes(:todos)
   	@todo = TodoEntry.new
   end
 
@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   	if @todo.save
   		redirect_to :projects_index
   	else
-  		@projects = Project.all
+  		@projects = Project.includes(:todos)
   		render :index
   	end
   end
