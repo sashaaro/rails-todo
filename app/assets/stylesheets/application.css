@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+}
+
+body {
+	background-color: #f5f5f5 !important;
+}
+
+.well.well-project {
+	background-color: #fff !important;
+	border-radius: 0px;
+	padding: 0px;
+}
+.well-project .well-project-title {
+	font-weight: bold;
+	font-size: 11px;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 10px;
+	padding-left: 14px;
+	text-transform: uppercase;
+}
+
+/*.icheckbox-todo.checked {
+	background-color: #3aafda !important;
+}*/
+
+.navbar.navbar-todo {
+	background-color: #3aafda !important;
+	color:white;
+}
+
+.well-project .well-project-todo {
+	margin-top: 10px
+}
+.well-project .well-project-todo ul {
+	padding-left: 25px;
+}
+.well-project .well-project-todo ul li {
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+.well-project .well-project-todo ul li span {
+	padding-left: 15px; 
+}
+
+.btn-show-form {
+	cursor: pointer;
+}
+
+
+#logo-title {
+    top:50%;
+    left:50%;
+    width:162px;
+    height:50px;
+    position:absolute;
+    text-align:center;
+    margin: -25px 0 0 -31px;
+}

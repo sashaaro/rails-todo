@@ -16,8 +16,13 @@
 
 
 $(document).ready(function() {
+	$('input').iCheck({
+		checkboxClass: 'icheckbox_square-blue'
+	});
+
+
 	var $form = $('form');
-	var $showFormButton = $('#show_form');
+	var $showFormButton = $('.btn-show-form');
 
 	var isSubmited = $form.data('submited');
 	if (!isSubmited) {

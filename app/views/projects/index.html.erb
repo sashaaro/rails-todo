@@ -1,20 +1,27 @@
-<h1>Задачи</h1>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
 
-</br>
-<% @projects.each do |project| %>
-	<h3><%= project.title.upcase %></h3>
-
-	<ul>
-	<% project.todos.each do |todo| %>
-		<li>
-			<input data-id=<%= todo.id %> type="checkbox" <%= todo.isCompleted ? 'checked' : '' %>/>
-			<%= todo.text %>
-		</li>
+  	<% @projects.each do |project| %>
+	<div class="col-md-4">
+	  <div class="well well-project">
+	      <div class="well-project-title"><%= project.title.upcase %></div>
+	      <div class="well-project-todo">
+	      	<ul>
+	      	<% project.todos.each do |todo| %>
+				<li>
+					<input data-id=<%= todo.id %> type="checkbox" <%= todo.isCompleted ? 'checked' : '' %>/>
+					<span><%= todo.text %></span>
+				</li>
+			<% end %>
+			</ul>
+		  </div>
+	  </div>
+    </div>
 	<% end %>
-	</ul>
-<% end %>
 
-<a href="#" id="show_form">+</a>
+  </div>
+</div>
 
 <%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form", "data-submited": (request.post? ? 1 : 0) } do |f| %>
   <h2>Новая задача</h2>
