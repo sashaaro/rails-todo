@@ -14,37 +14,53 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 $(document).ready(function() {
-	$('input').iCheck({
-		checkboxClass: 'icheckbox_square-blue'
+	var $todoList = $('.well-project-todo');
+
+	$todoList.find('input[type=checkbox]')
+		.iCheck({
+			checkboxClass: 'icheckbox_square-blue'
+		})
+		.on('ifToggled', function() {
+			var todo = {
+				id: $(this).data('id'),
+				isCompleted: this.checked
+			}
+
+			$.ajax('/todos/change_status', {
+				method: 'POST',
+				data: todo
+			})
+		});
+
+	var select2Options = {
+		width: 'resolve',
+		minimumResultsForSearch: -1,
+		placeholder: "Категория",
+  		//allowClear: true
+	};
+
+	var $modal = $('.modal.modal-todo')
+	var $form = $modal.find('form');
+
+	select2Options.dropdownParent = $modal;
+	$form.find('select').select2(select2Options);
+
+	var $showFormButton = $('.btn-show-form');
+	var isSubmited = $form.data('submited');
+
+	$modal.on('shown.bs.modal', function() {
+		$modal.find('select').select2(select2Options);
 	});
 
+	$modal.on('hidden.bs.modal', function() {
+		// Reset form
+		$form.find('.help-block').remove();
+		$form.trigger('reset');
+	});	
 
-	var $form = $('form');
-	var $showFormButton = $('.btn-show-form');
 
-	var isSubmited = $form.data('submited');
-	if (!isSubmited) {
-		$form.hide();
+	if (isSubmited) {
+		$modal.modal('show');
 	}
-	
-
-	$showFormButton.on('click', function(e) {
-		e.preventDefault();
-		$form.show();
-		// TODO $showFormButton.hide();
-	})
-
-	$('input[type=checkbox]').on('change', function() {
-		var todo = {
-			id: $(this).data('id'),
-			isCompleted: this.checked
-		}
-
-		$.ajax('/todos/change_status', {
-			method: 'POST',
-			data: todo
-		})
-	})
 });

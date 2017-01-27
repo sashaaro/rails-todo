@@ -23,14 +23,29 @@
   </div>
 </div>
 
-<%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form", "data-submited": (request.post? ? 1 : 0) } do |f| %>
-  <h2>Новая задача</h2>
-  <%= f.text_field :text %>
-  <%= @todo.errors.messages[:text].first if @todo.errors.messages[:text] %>
-  <%#= f.collection_select :project, Project.all, :id, :title %>
-  <%= f.select :project_id, Project.all.collect {|c| [ c.title, c.id ] } %>
-  <div>
-	  <a href="#" onClick="javascript: event.preventDefault(); this.closest('form').style.display = 'none'; return void(0)">ОТМЕНА</a>
-	  <a href="#" onClick="javascript: event.preventDefault(); this.closest('form').submit(); return void(0)">OK</a>
+<div class="modal modal-todo fade bs-example-modal-sm" role="dialog">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-todo-title">Новая задача</div>
+    <%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form", "data-submited": (request.post? ? 1 : 0) } do |f| %>
+	  <div>
+	  	  <div class="form-group">
+		  	<%= f.text_field :text, class: 'form-control input-sm form-control-todo', placeholder: 'Введите задачу' %>
+		  	<% if @todo.errors.messages[:text] %>
+		  		<span class="help-block"><%= @todo.errors.messages[:text].first %></span>
+		  	<% end %>
+		  </div>
+
+		  <%= f.select :project_id, Project.all.collect {|c| [ c.title, c.id ] } %>
+	  </div>
+
+	  <div class="modal-actions">
+		  <a class="btn btn-todo btn-cancel" href="#" data-dismiss="modal">Отмена</a>
+		  <button class="btn btn-todo" type="submit">Ok</button>
+	  </div>
+	<% end %>
+
+
+    </div>
   </div>
-<% end %>
+</div>

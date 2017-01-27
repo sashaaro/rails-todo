@@ -64,6 +64,74 @@ body {
 }
 
 
+.modal.modal-todo .modal-content {
+	border-radius: 0px;
+}
+.modal.modal-todo .modal-todo-title {
+	font-weight: bold;
+	font-size: 11px;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 10px;
+	padding-left: 14px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.modal.modal-todo form {
+	padding: 10px;
+}
+.modal .modal-actions {
+	margin-top: 20px;
+}
+
+.form-control.form-control-todo {
+	border-radius: 0px;
+	-webkit-appearance: none;
+}
+
+form.nifty_form select {
+	width: 100%;
+}
+
+.btn.btn-todo {
+	background-color: #3aafda;
+	color: #fff;
+	border-radius: 0px;
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 7px 14px;
+}
+.btn.btn-todo.btn-cancel {
+	background-color: #999;
+}
+
+.select2-selection, .select2-selection__rendered, .select2-selection__arrow {
+
+   height: 30px !important;
+
+   span {
+
+       line-height: 40px !important;
+
+       text-align: left;
+
+   }
+
+}
+
+.select2-selection {
+
+   border-radius: 0 !important;
+
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	background-color: #3aafda !important;
+}
+
+.modal.modal-todo form .btn {
+	width: 49%;
+}
+
 #logo-title {
     top:50%;
     left:50%;
