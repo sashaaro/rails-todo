@@ -1,0 +1,46 @@
+.modal {
+	display: none;
+	width: 250px;
+	height: 150px;
+	position: fixed;
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    margin: 30px auto;
+
+	.modal-dialog {
+		position: relative;
+		
+		.modal-content {
+			background-color: #fff;
+			padding: 0px;
+			border: 1px solid #e3e3e3;
+			border-radius: 0px;
+		}
+	}
+	.modal-title {
+		font-weight: bold;
+		font-size: 11px;
+		border-bottom: 1px solid #e3e3e3;
+		padding: 10px;
+		padding-left: 14px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	.modal-actions .btn {
+		width: 49%;
+	}
+}
+.modal-backgroup {
+	transition: opacity .15s linear;
+	background-color: #000;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    opacity: 0.4;
+}
