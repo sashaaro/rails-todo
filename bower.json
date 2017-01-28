@@ -1,0 +1,17 @@
+{
+  "name": "todo",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "authors": [
+    "Aleksandr Arofikin <sashaaro@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sashaaro/rails-todo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

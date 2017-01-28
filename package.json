@@ -1,0 +1,28 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bower": "^1.8.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashaaro/rails-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sashaaro/rails-todo/issues"
+  },
+  "homepage": "https://github.com/sashaaro/rails-todo#readme"
+}
