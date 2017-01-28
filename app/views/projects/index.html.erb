@@ -23,25 +23,26 @@
   </div>
 </div>
 
-<div class="modal modal-todo fade bs-example-modal-sm" role="dialog">
-  <div class="modal-dialog modal-sm" role="document">
+<div class="modal">
+  <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-todo-title">Новая задача</div>
-    <%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form", "data-submited": (request.post? ? 1 : 0) } do |f| %>
+      <div class="modal-title">Новая задача</div>
+    <%= form_for @todo, url: {action: "create"}, html: {class: "add-todo-form", "data-submited": (request.post? ? 1 : 0) } do |f| %>
 	  <div>
 	  	  <div class="form-group">
-		  	<%= f.text_field :text, class: 'form-control input-sm form-control-todo', placeholder: 'Введите задачу' %>
+		  	<%= f.text_field :text, class: 'form-control', placeholder: 'Введите задачу' %>
 		  	<% if @todo.errors.messages[:text] %>
 		  		<span class="help-block"><%= @todo.errors.messages[:text].first %></span>
 		  	<% end %>
 		  </div>
-
-		  <%= f.select :project_id, Project.all.collect {|c| [ c.title, c.id ] } %>
+		  <div class="form-group">
+		  	<%= f.select :project_id, Project.all.collect {|c| [ c.title, c.id ] } %>
+		  </div>
 	  </div>
 
 	  <div class="modal-actions">
-		  <a class="btn btn-todo btn-cancel" href="#" data-dismiss="modal">Отмена</a>
-		  <button class="btn btn-todo" type="submit">Ok</button>
+		  <a class="btn btn-cancel" href="#" data-dismiss="modal">Отмена</a>
+		  <button class="btn" type="submit">Ok</button>
 	  </div>
 	<% end %>
 
@@ -49,3 +50,5 @@
     </div>
   </div>
 </div>
+
+<div class="modal-backgroup"></div>

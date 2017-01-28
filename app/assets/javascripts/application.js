@@ -40,7 +40,7 @@ $(document).ready(function() {
   		//allowClear: true
 	};
 
-	var $modal = $('.modal.modal-todo')
+	var $modal = $('.modal')
 	var $form = $modal.find('form');
 
 	select2Options.dropdownParent = $modal;
@@ -49,15 +49,17 @@ $(document).ready(function() {
 	var $showFormButton = $('.btn-show-form');
 	var isSubmited = $form.data('submited');
 
-	$modal.on('shown.bs.modal', function() {
-		$modal.find('select').select2(select2Options);
+	$modal.find('select').select2(select2Options);
+
+	/*$modal.on('shown.bs.modal', function() {
+		
 	});
 
 	$modal.on('hidden.bs.modal', function() {
 		// Reset form
 		$form.find('.help-block').remove();
 		$form.trigger('reset');
-	});	
+	});	*/
 
 
 	if (isSubmited) {
