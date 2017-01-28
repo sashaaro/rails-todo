@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div class="modal">
+<div class="modal modal-add-todo">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-title">Новая задача</div>
@@ -31,8 +31,8 @@
 	  <div>
 	  	  <div class="form-group">
 		  	<%= f.text_field :text, class: 'form-control', placeholder: 'Введите задачу' %>
-		  	<% if @todo.errors.messages[:text] %>
-		  		<span class="help-block"><%= @todo.errors.messages[:text].first %></span>
+		  	<% if @todo.errors.messages[:text].size > 0 %>
+		  		<span class="field-error"><%= @todo.errors.messages[:text].first.capitalize %></span>
 		  	<% end %>
 		  </div>
 		  <div class="form-group">
@@ -41,7 +41,7 @@
 	  </div>
 
 	  <div class="modal-actions">
-		  <a class="btn btn-cancel" href="#" data-dismiss="modal">Отмена</a>
+		  <a class="btn btn-cancel" href="#" onclick="javascript: event.preventDefault(); Modal.close(); return void(0);" data-dismiss="modal">Отмена</a>
 		  <button class="btn" type="submit">Ok</button>
 	  </div>
 	<% end %>
@@ -50,5 +50,3 @@
     </div>
   </div>
 </div>
-
-<div class="modal-backgroup"></div>

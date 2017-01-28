@@ -1,8 +1,10 @@
+@import "./../vendor/bootstrap/scss/bootstrap-grid"; // include only grid
+
 // variables
 $primaryColor: #3aafda;
-
 @import "fronts"; // our fronts
-@import "./../vendor/bootstrap/scss/bootstrap-grid"; // include only grid
+@import "form";
+@import "modal";
 
 
 * {
@@ -15,6 +17,10 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+.modal-add-todo form {
+	padding: 10px;
 }
 
 .well.well-project {
@@ -112,78 +118,6 @@ a {
 	cursor: pointer;
 }
 
-.modal {
-	width: 250px;
-	height: 150px;
-	position: fixed;
-	top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1050;
-    margin: 30px auto;
-
-	.modal-dialog {
-		position: relative;
-		
-
-		.modal-content {
-			background-color: #fff;
-			padding: 0px;
-			border: 1px solid #e3e3e3;
-			border-radius: 0px;
-		}
-	}
-	.modal-title {
-		font-weight: bold;
-		font-size: 11px;
-		border-bottom: 1px solid #e3e3e3;
-		padding: 10px;
-		padding-left: 14px;
-		text-transform: uppercase;
-		text-align: center;
-	}
-	form {
-		padding: 10px;
-	}
-
-	.modal-actions {
-		.btn {
-			width: 49%;
-		}
-		// margin-top: 10px;
-	}
-}
-.modal-backgroup {
-	background-color: #000;
-	position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    opacity: 0.4;
-}
-
-.form-group {
-	margin-bottom: 10px;
-}
-
-input.form-control {
-	padding-left: 5px;
-	height: 30px;
-	width: 100%;
-	border: 1px solid #ccc;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-	border-radius: 0px;
-	-webkit-appearance: none;
-}
-
-form.add-todo-form select {
-	width: 100%;
-}
-
 .btn {
 	cursor: pointer;
 	display: inline-block;
@@ -200,32 +134,4 @@ form.add-todo-form select {
 }
 .btn.btn-cancel {
 	background-color: #999;
-}
-
-.select2-selection, .select2-selection__rendered, .select2-selection__arrow {
-
-   height: 40px !important;
-
-   span {
-
-       line-height: 40px !important;
-
-       text-align: left;
-
-   }
-
-}
-
-.select2-selection {
-
-   border-radius: 0 !important;
-
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-	background-color: $primaryColor !important;
-}
-
-.modal.modal-todo form .btn {
-	width: 49%;
 }
