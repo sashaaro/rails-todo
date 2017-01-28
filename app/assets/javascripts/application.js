@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require select2/dist/js/select2.min.js
+//= require iCheck/icheck.min.js
 
 // Plugin modal window
 var Modal = function($element) {
@@ -87,7 +89,7 @@ $(document).ready(function() {
 	var isSubmited = $form.data('submited');
 
 	//select2Options.dropdownParent = $addTodoModal;
-	
+
 	$addTodoModal.find('select').select2(select2Options);
 
 	var modalWindow = new Modal($addTodoModal);

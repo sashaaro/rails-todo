@@ -1,11 +1,15 @@
-@import "./../vendor/bootstrap/scss/bootstrap-grid"; // include only grid
+// import vendor libs
+@import "bootstrap/scss/bootstrap-grid"; // include only grid
+// @import "select2/dist/css/select2.css";
+@import "select2/src/scss/core.scss"; 
+@import "iCheck/skins/square/blue.css"; 
 
 // variables
 $primaryColor: #3aafda;
+
 @import "fronts"; // our fronts
 @import "form";
 @import "modal";
-
 
 * {
 	font-family: OpenSans-Light;
