@@ -1,8 +1,15 @@
 // import vendor libs
 @import "bootstrap/scss/bootstrap-grid"; // include only grid
-// @import "select2/dist/css/select2.css";
+// @import "select2/dist/css/select2";
 @import "select2/src/scss/core.scss"; 
-@import "iCheck/skins/square/blue.css"; 
+@import "iCheck/skins/square/blue"; 
+
+.iradio_square-blue {
+    background: url(image_path("blue.png")) no-repeat !important;
+    //background: url(asset-url("blue.png")) no-repeat;
+    //background: asset-url("blue.png") no-repeat;
+}
+
 
 // variables
 $primaryColor: #3aafda;
