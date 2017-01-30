@@ -1,6 +1,6 @@
 Rails.application.configure do
-  config.serve_static_assets = true
-  config.action_dispatch.x_sendfile_header = nil
+  #config.serve_static_assets = true
+  #config.action_dispatch.x_sendfile_header = nil
 
 
 

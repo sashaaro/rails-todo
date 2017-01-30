@@ -4,19 +4,26 @@
 @import "select2/src/scss/core.scss"; 
 @import "iCheck/skins/square/blue"; 
 
-.iradio_square-blue {
-    background: url(image_path("blue.png")) no-repeat !important;
-    //background: url(asset-url("blue.png")) no-repeat;
-    //background: asset-url("blue.png") no-repeat;
-}
-
-
 // variables
 $primaryColor: #3aafda;
 
 @import "fronts"; // our fronts
 @import "form";
 @import "modal";
+
+
+.icheckbox_square-blue,
+.iradio_square-blue {
+    background: url(asset_path("iCheck/skins/square/blue.png")) no-repeat;
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_square-blue,
+    .iradio_square-blue {
+    	background-image: url(asset_path("iCheck/skins/square/blue@2x.png")) no-repeat;
+    }
+}
 
 * {
 	font-family: OpenSans-Light;
