@@ -70,7 +70,7 @@ $(document).ready(function() {
 				isCompleted: this.checked
 			}
 
-			$.ajax('/todos/change_status', {
+			$.ajax('/projects/todo_change_status', {
 				method: 'POST',
 				data: todo
 			})

@@ -15,6 +15,13 @@ class ProjectsController < ApplicationController
   	end
   end
 
+  def todo_change_status
+    todo = TodoEntry.find params[:id]
+    todo.isCompleted = params[:isCompleted]
+    todo.save
+    render json: todo
+  end
+  
   def update
   end
 

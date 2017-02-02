@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post 'todos/change_status'
+  post 'projects/todo_change_status'
 
   root to: 'projects#index' 
 
