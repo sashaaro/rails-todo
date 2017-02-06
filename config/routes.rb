@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  post 'projects/todo_change_status'
+  post 'projects/todo_change_status' # TODO remove
+  
+  post 'api/todo_change_status'
+  get 'api/projects'
 
   root to: 'projects#index' 
 

@@ -81,8 +81,8 @@ test:
 #
 production:
   <<: *default
-  #database: todo_development
-  url: <%= ENV['DATABASE_URL'] %>
+  database: todo_development
+  #url: <%= ENV['DATABASE_URL'] %>
   #<<: *default
   #database: todo_production
   #username: todo

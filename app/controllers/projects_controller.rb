@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def todo_change_status
     todo = TodoEntry.find params[:id]
+    raise ActionController::RoutingError.new('Not Found') unless todo
     todo.isCompleted = params[:isCompleted]
     todo.save
     render json: todo
