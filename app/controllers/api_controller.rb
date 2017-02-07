@@ -17,7 +17,7 @@ class ApiController < ActionController::Base
   	if @todo.valid? and @todo.save
   		render json: @todo, status: :ok, include: :project
   	else 
-  		render json: @todo.errors, status: 403
+  		render json: {errors: @todo.errors}, status: 403
   	end
   end
 end
